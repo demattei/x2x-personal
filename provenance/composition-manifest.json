@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "product": "x2x-personal",
+  "status": "composition-scaffold-pending-qualified-core",
+  "kernel_dependency": {
+    "repository": "demattei/x2x-core",
+    "release_tag": null,
+    "implementation_commit": null,
+    "canonical_commit": null,
+    "binding_digest": null
+  },
+  "authority_rule": "Personal cannot independently authorize consequences.",
+  "required_receipts": [
+    "decision",
+    "execution_attempt",
+    "verification",
+    "reconciliation",
+    "closeout"
+  ],
+  "release_blockers": [
+    "qualified signed X2X Core release",
+    "capability manifest approval",
+    "gateway adapter qualification",
+    "privacy and accessibility verification",
+    "independent product review"
+  ]
+}
