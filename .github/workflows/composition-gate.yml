@@ -1,0 +1,29 @@
+name: X2X Personal Composition Gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: x2x-personal-composition-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contract-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate composition contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_contracts.py

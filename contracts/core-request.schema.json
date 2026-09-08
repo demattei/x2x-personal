@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "X2X Personal Core Composition Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "product_id",
+    "kernel_binding_digest",
+    "capability_manifest_digest",
+    "product_identity_digest",
+    "consequence_digest",
+    "context_digest",
+    "requested_consequence_class"
+  ],
+  "properties": {
+    "schema_version": {"const": "x2x.personal.core-request.v1"},
+    "request_id": {"type": "string", "minLength": 1},
+    "product_id": {"const": "x2x-personal"},
+    "kernel_binding_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "capability_manifest_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "product_identity_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "consequence_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "context_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "requested_consequence_class": {
+      "enum": ["READ_ONLY", "REVERSIBLE", "MATERIAL", "IRREVERSIBLE"]
+    }
+  }
+}
