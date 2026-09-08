@@ -1,0 +1,39 @@
+{
+  "schema_version": "x2x.personal.contract-vectors.v1",
+  "vectors": [
+    {
+      "id": "allow-read-only",
+      "request": {
+        "product_id": "x2x-personal",
+        "requested_consequence_class": "READ_ONLY",
+        "authority_state": "RECOGNIZED"
+      },
+      "expected": "CORE_DECISION_REQUIRED"
+    },
+    {
+      "id": "unknown-authority",
+      "request": {
+        "product_id": "x2x-personal",
+        "requested_consequence_class": "REVERSIBLE",
+        "authority_state": "UNKNOWN"
+      },
+      "expected": "DEFER_OR_DENY"
+    },
+    {
+      "id": "product-side-authority",
+      "request": {
+        "product_id": "x2x-personal",
+        "independent_authority": true
+      },
+      "expected": "REJECT_COMPOSITION"
+    },
+    {
+      "id": "unqualified-kernel",
+      "request": {
+        "product_id": "x2x-personal",
+        "kernel_binding_digest": null
+      },
+      "expected": "REJECT_RELEASE"
+    }
+  ]
+}
