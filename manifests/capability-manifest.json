@@ -1,0 +1,46 @@
+{
+  "manifest_schema": "x2x.product-capability.v1",
+  "product_id": "x2x-personal",
+  "product_version": "0.1.0-composition-scaffold",
+  "status": "pending-qualified-core",
+  "kernel_dependency": {
+    "repository": "demattei/x2x-core",
+    "release_tag": null,
+    "implementation_commit": null,
+    "canonical_commit": null,
+    "binding_digest": null
+  },
+  "authority_constraints": {
+    "independent_authority": false,
+    "direct_consequence_adapter_invocation": false,
+    "unknown_to_allow": false,
+    "runtime_capability_expansion": false
+  },
+  "capabilities": [
+    {"id": "personal.policy.selection", "mode": "PROPOSE"},
+    {"id": "personal.gateway.control.request", "mode": "PROPOSE"},
+    {"id": "personal.receipt.view", "mode": "OBSERVE"},
+    {"id": "personal.receipt.export", "mode": "OBSERVE"}
+  ],
+  "reachable_consequence_classes": ["READ_ONLY", "REVERSIBLE"],
+  "required_receipts": [
+    "DECISION",
+    "EXECUTION_ATTEMPT",
+    "VERIFICATION",
+    "RECONCILIATION",
+    "CLOSEOUT"
+  ],
+  "data_boundary": {
+    "location": "DENIED_BY_DEFAULT",
+    "messages": "NOT_REQUESTED",
+    "contacts_photos_schoolwork": "NOT_REQUESTED",
+    "purchase_receipts": "SELECTIVE",
+    "local_network": "EXPLICIT_USER_AUTHORITY"
+  },
+  "approval": {
+    "owner": null,
+    "reviewer": null,
+    "effective_at": null,
+    "revoked_at": null
+  }
+}
